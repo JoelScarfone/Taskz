@@ -6,7 +6,7 @@ class Todo
 		@tasks =  File.exist?(Dir.home + '/.todo_list') ? Marshal.load(File.read(Dir.home + '/.todo_list')) : []
 	end
 
-	attr_reader :items
+	attr_reader :tasks
 
 	def add(task)
 		raise ArugmentError.new "Expecting add on type Task" unless task.kind_of? Task
